@@ -26,13 +26,32 @@ namespace DZ6
             {
                 array[i] = rnd.Next(0, 10);
             }
+            Console.WriteLine();
             for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine(array[i] + "\t");
+                Console.Write(array[i] + "\t");
             }
-            
+            int colChet = 0, colNeChet = 0, sumChet = 0, sumNeChet = 0;
 
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] % 2 == 0)
+                {
+                    colChet++;
+                    sumChet = sumChet + array[i];
+                }
+                else
+                {
+                    colNeChet++;
+                    sumNeChet = sumNeChet + array[i];
+                }
+            }
 
+            Console.WriteLine();
+            Console.WriteLine("Количество четных чисел:" + colChet);
+            Console.WriteLine("Количество не четных чисел:" + colNeChet);
+            Console.WriteLine("Сумма четных чисел:" + sumChet);
+            Console.WriteLine("Сумма не четных чисел:" + sumNeChet);
 
         }
     }
